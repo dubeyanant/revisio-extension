@@ -9,7 +9,7 @@ document.getElementById("fetchYouTube").addEventListener("click", function () {
     const data = { url: url };
 
     // Send a POST request to your API endpoint
-    fetch("http://0.0.0.0:3000/url", {
+    fetch("http://localhost:3000/url", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
