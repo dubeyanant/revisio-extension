@@ -1,8 +1,8 @@
 {
   "manifest_version": 2,
-  "name": "YouTube Embed",
-  "version": "1.0",
-  "description": "Fetch and Embed YouTube URLs",
+  "name": "URL Grabber",
+  "version": "2.0",
+  "description": "Fetch URLs",
   "permissions": ["activeTab", "<all_urls>"],
   "browser_action": {
     "default_popup": "popup.html",
