@@ -1,3 +1,8 @@
+const SUPABASE_URL = "https://hyjmgjfwhqbeztjastpo.supabase.co";
+const SUPABASE_API_KEY =
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imh5am1namZ3aHFiZXp0amFzdHBvIiwicm9sZSI6ImFub24iLCJpYXQiOjE2OTMwNzI0NDIsImV4cCI6MjAwODY0ODQ0Mn0.uRcmey3xR0bvr_8zXliud2Ebqk7i59TtVabVJljwssE";
+const TABLE_NAME = "links";
+
 document.getElementById("fetchUrl").addEventListener("click", function () {
   chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
     const tab = tabs[0];
@@ -5,19 +10,25 @@ document.getElementById("fetchUrl").addEventListener("click", function () {
 
     const data = { url: url };
 
-    fetch("http://localhost:3000/url", {
+    fetch(`${SUPABASE_URL}/rest/v1/${TABLE_NAME}`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
+        apikey: SUPABASE_API_KEY,
       },
       body: JSON.stringify(data),
     })
-      .then((response) => response.json())
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+        return response.text();
+      })
       .then((data) => {
-        console.log("API response:", data);
+        console.log("Data inserted into Supabase:", data);
       })
       .catch((error) => {
-        console.error("Error:", error);
+        console.error("Error inserting data into Supabase:", error);
       });
   });
 });
