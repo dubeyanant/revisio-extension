@@ -1,8 +1,8 @@
 {
   "name": "URL Grabber",
   "manifest_version": 3,
-  "description": "An extension that grabs and send URL to database",
-  "version": "1.3.0",
+  "description": "An extension that grabs and sends URLs to the database",
+  "version": "1.5.0",
   "author": "Anant Dubey",
   "permissions": ["activeTab"],
   "host_permissions": ["<all_urls>"],
@@ -13,5 +13,12 @@
   },
   "icons": {
     "128": "icon128.png"
-  }
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["contentScript.js"],
+      "run_at": "document_end"
+    }
+  ]
 }
