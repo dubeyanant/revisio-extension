@@ -7,9 +7,15 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <h1 class="header">URL Grabber</h1>
-    <button id="fetchUrl" class="button">Fetch URL</button>
-    <div id="dataDisplay" class="data-display"></div>
+    <div class="main">
+      <h1 class="main__header">URL Grabber</h1>
+      <div id="dataDisplay" class="main__user">user id: no user</div>
+      <button id="fetchUrl" class="main__button">
+        <img src="plus.svg" alt="share icon" class="main__button__icon" />
+        Grab
+      </button>
+    </div>
+
     <script src="config.js" type="module"></script>
     <script src="popup.js" type="module"></script>
   </body>

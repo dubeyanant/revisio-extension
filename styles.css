@@ -1,25 +1,89 @@
-/* Header styles */
-.header {
-  font-size: 20px;
-  color: #333;
+/* Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Josefin+Sans:ital,wght@0,700;1,400&display=swap");
+
+/* Boiler plate resets */
+*,
+*::before,
+**::after {
+  box-sizing: border-box;
 }
 
-/* Button styles */
-.button {
-  background-color: #007acc;
+* {
+  padding: 0;
+  margin: 0;
+  font: inherit;
+}
+
+html {
+  font-size: 100%;
+}
+
+img,
+picture,
+svg,
+video {
+  display: block;
+  max-width: 100%;
+}
+
+body {
+  min-height: 100vh;
+  width: 230px;
+}
+
+/* Page styles */
+
+.main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  font-family: "Josefin Sans", sans-serif;
+  text-align: center;
+
+  padding: 2.5em 2em;
+}
+
+.main__header {
+  font-weight: 700;
+  font-size: 1.75rem;
+}
+
+.main__user {
+  font-weight: 400;
+  font-size: 0.5rem;
+
+  margin-top: 0.5rem;
+}
+
+.main__button {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  font-size: 1rem;
+
+  background-color: #111111;
   color: #fff;
-  border: none;
-  padding: 10px 20px;
+
+  padding-inline: 2.25rem;
+  padding-block: 0.75rem;
+  margin-top: 1.875rem;
+
+  border-radius: 100px;
+}
+
+.main__button:hover {
   cursor: pointer;
+  box-shadow: rgba(240, 46, 170, 0.4) 5px 5px, rgba(240, 46, 170, 0.3) 10px 10px,
+    rgba(240, 46, 170, 0.2) 15px 15px, rgba(240, 46, 170, 0.1) 20px 20px,
+    rgba(240, 46, 170, 0.05) 25px 25px;
 }
 
-.button:hover {
-  background-color: #00558c;
-}
-
-/* Data display styles */
-.data-display {
-  margin-top: 20px;
-  font-size: 16px;
-  color: #444;
+.main__button__icon {
+  aspect-ratio: 1;
+  width: 20px;
 }
