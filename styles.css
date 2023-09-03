@@ -83,6 +83,11 @@ body {
     rgba(240, 46, 170, 0.05) 25px 25px;
 }
 
+.main__button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
 .main__button__icon {
   aspect-ratio: 1;
   width: 20px;

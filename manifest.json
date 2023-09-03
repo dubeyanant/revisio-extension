@@ -2,7 +2,7 @@
   "name": "URL Grabber",
   "manifest_version": 3,
   "description": "An extension that grabs and sends URLs to the database",
-  "version": "1.5.0",
+  "version": "1.6.0",
   "author": "Anant Dubey",
   "permissions": ["activeTab", "storage"],
   "host_permissions": ["<all_urls>"],
